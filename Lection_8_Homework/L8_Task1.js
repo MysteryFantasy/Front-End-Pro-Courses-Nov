@@ -1,17 +1,7 @@
 function initSlider(size) {
     counter = 0;
-    
-    function isFinish() {
-        if (counter > size){
-            counter = 0;
-            return counter;
-    
-        } else if (counter < 0) {
-            counter = size;
-            return counter;
-        }
-    }
-    
+    var slider = {};
+
     return slider = {
         up: function() {
             counter++;
@@ -38,6 +28,16 @@ function initSlider(size) {
             } else {
                 console.log('Error! The maximum number is ' + size);
             }
+        }
+    }
+    
+    function isFinish() {
+        if (counter > size){
+            counter = 0;
+            return counter;
+        } else if (counter < 0) {
+            counter = size;
+            return counter;
         }
     }
     
