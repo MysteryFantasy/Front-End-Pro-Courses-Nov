@@ -4,14 +4,21 @@ function SuperMath() {
 
 console.log(SuperMath, 'SuperMath');
 
-
-obj = {
-    X: 12,
-    Y: 3,
-    znak: "/"
+SuperMath.prototype.znak = function() {
+    result = 0;
+    if (znak == '+') {
+        result = X + Y;
+    } else if (znak == '-') {
+        result = X - Y; 
+    } else if (znak == '*') {
+        result = X * Y;
+    } else if (znak == '/') {
+        result = X / Y;
+    } else if (znak == '%') {
+        result = X % Y;
+    }
+    return result;
 }
-
-console.log(obj, 'obj');
 
 var p = new SuperMath();
 console.log(p, 'p');
@@ -22,10 +29,16 @@ p.check = function(obj) {
     znak = obj.znak;
     var doMath = confirm("Вы точно хотите выполнить действие: " + X + " " + znak + " " + Y + "?");
     if (doMath == true) {
-        console.log('do math');
+        return p.znak();
     } else {
-        console.log('new input');
+        console.log('new input')
     }
+}
+
+obj = {
+    X: 12,
+    Y: 3,
+    znak: "/"
 }
 
 console.log(p.check(obj));
