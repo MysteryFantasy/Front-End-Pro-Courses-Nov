@@ -1,17 +1,19 @@
 function initSlider(size) {
     counter = 0;
     var slider = {};
-
+    
     return slider = {
         up: function() {
             counter++;
-            isFinish();
+            this.isStart();
+            this.isFinish();
             console.log(counter, 'counter up');
         },
     
         down: function() {
             counter--;
-            isFinish();
+            this.isStart();
+            this.isFinish();
             console.log(counter, 'counter down');
         },
     
@@ -28,16 +30,20 @@ function initSlider(size) {
             } else {
                 console.log('Error! The maximum number is ' + size);
             }
-        }
-    }
-    
-    function isFinish() {
-        if (counter > size){
-            counter = 0;
-            return counter;
-        } else if (counter < 0) {
-            counter = size;
-            return counter;
+        },
+
+        isStart: function() {
+            if (counter < 0) {
+                counter = size;
+                return counter;
+            }
+        },
+
+        isFinish: function() {
+            if (counter > size){
+                counter = 0;
+                return counter;
+            }
         }
     }
     
