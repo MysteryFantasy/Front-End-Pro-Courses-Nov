@@ -1,8 +1,21 @@
 function SuperMath() {
+    
+    this.input = function() {
+        newX = parseInt(prompt('Введите новое значение "x"'));
+        X = newX;
+        console.log(newX, 'newX');
+        
+        newY = parseInt(prompt('Введите новое значение "y"'));
+        Y = newY;
+        console.log(newY, 'newY');
+        
+        newZnak = prompt('Введите новое значение "znak"');
+        znak = newZnak;
+        console.log(newZnak, 'newZnak');
 
+        return this.znak();
+    }
 }
-
-console.log(SuperMath, 'SuperMath');
 
 SuperMath.prototype.znak = function() {
     result = 0;
@@ -31,7 +44,7 @@ p.check = function(obj) {
     if (doMath == true) {
         return p.znak();
     } else {
-        console.log('new input')
+        return p.input();
     }
 }
 
