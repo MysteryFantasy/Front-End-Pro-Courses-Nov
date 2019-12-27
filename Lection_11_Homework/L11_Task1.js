@@ -13,7 +13,12 @@ function SuperMath() {
         znak = newZnak;
         console.log(newZnak, 'newZnak');
 
-        return this.znak();
+        if ((znak == '+') || (znak == '-') || (znak == '*') || (znak == '/') || (znak == '%')) {
+            return this.znak();
+        } else {     
+            return console.log('Ваше действие ' + znak + ' не может быть выполненым');
+        }
+
     }
 }
 
