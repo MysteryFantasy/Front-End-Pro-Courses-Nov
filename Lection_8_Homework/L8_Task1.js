@@ -35,14 +35,12 @@ function initSlider(size) {
         isStart: function() {
             if (counter < 0) {
                 counter = size;
-                return counter;
             }
         },
 
         isFinish: function() {
             if (counter > size){
                 counter = 0;
-                return counter;
             }
         }
     }
