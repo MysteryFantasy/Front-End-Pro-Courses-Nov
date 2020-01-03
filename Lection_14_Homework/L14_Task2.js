@@ -20,4 +20,21 @@ window.onload = function() {
         boxik.style.left = a + 'px';
     }
 
+    boxik.onmousedown = function() {
+        // console.log(this, 'boxik down');
+
+        document.onmousemove = function(event){
+            var c = event.pageX;
+            // console.log(c, 'pageX');
+            var d = event.pageY;
+            // console.log(d,'pageY');
+            
+            if(event.which == 1) {
+                boxik.style.left = c + 'px';
+                boxik.style.top = d + 'px';
+            }
+    
+        }
+    }
+
 }
