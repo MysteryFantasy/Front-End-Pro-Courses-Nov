@@ -3,8 +3,11 @@ window.onload = function() {
     setInterval(function(){
         
         var usrText = document.querySelectorAll('.inputText');
-        console.log(usrText, 'usrText');
+        // console.log(usrText, 'usrText');
 
+        var result = document.getElementById('resultText');
+        // console.log(result, 'result');
+        
         function resText(mass) {
             var str = '';
         
@@ -15,7 +18,8 @@ window.onload = function() {
             return str;
         }
 
-        console.log(resText(usrText));
+        var text = resText(usrText);
+        result.innerHTML = text;
 
     }, 2000)
 
