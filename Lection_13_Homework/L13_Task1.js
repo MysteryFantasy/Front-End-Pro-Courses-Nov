@@ -11,10 +11,11 @@ window.onload = function() {
         function resText(mass) {
             var str = '';
         
-            for(var i = 0; i < mass.length - 1; i++) {
-                str += mass[i].value + ',';
+            for(var i = 0; i < mass.length; i++) {
+                if(mass[i].value.length !== 0){
+                    str += mass[i].value + ',';
+                }
             }
-            str += mass[mass.length - 1].value;
             return str;
         }
 
