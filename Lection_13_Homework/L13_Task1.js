@@ -1,21 +1,22 @@
 window.onload = function() {
 
-    setInterval(function(){
-        
-        var usrText = document.querySelectorAll('.inputText');
-        // console.log(usrText, 'usrText');
+    var usrText = document.querySelectorAll('.inputText');
+    // console.log(usrText, 'usrText');
 
-        var result = document.getElementById('resultText');
-        // console.log(result, 'result');
-        
+    var result = document.getElementById('resultText');
+    // console.log(result, 'result');
+
+    setInterval(function(){
+
         function resText(mass) {
             var str = '';
         
-            for(var i = 0; i < mass.length; i++) {
-                if(mass[i].value.length !== 0){
+            for(var i = 0; i < mass.length - 1; i++) {
+                if(mass[i].value.length){
                     str += mass[i].value + ',';
                 }
             }
+            str+= mass[mass.length - 1].value
             return str;
         }
 
