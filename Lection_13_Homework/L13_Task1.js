@@ -12,7 +12,7 @@ window.onload = function() {
             var str = '';
         
             for(var i = 0; i < mass.length - 1; i++) {
-                if(mass[i].value.length){
+                if(mass[i].value){
                     str += mass[i].value + ',';
                 }
             }
