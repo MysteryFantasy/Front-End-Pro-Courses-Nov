@@ -22,26 +22,28 @@ window.onload = function(){
 
     function createMenu () {
         var container = document.createElement('div');
-        // container.classList.add(data.type); 
+        container.classList.add(data.type); 
         
         for (var i = 0; i < data.items.length; i++){
-            var m = data.items[i].title;
-            console.log(m, 'm');
+            // var title = data.items[i].title;
+            // console.log(title, 'title');
+
+            // var handler = data.items[i].handler;
+            // console.log(handler, 'handler');
     
             var span = document.createElement('span');
             span.classList.add('change');
-            span.classList.add(data.type);
+            // span.classList.add(data.type);
                     
-            span.innerHTML = "Title: " + m;
-            
-            // span.innerHTML = "Title: " + data.items[i].title;
-            // console.log(span.innerHTML, 'span.innerHTML');
+            span.innerHTML = "Title: " + data.items[i].title + " " + "Handler: " + data.items[i].handler;
+
             container.append(span);
         }
+        
         document.body.append(container);
     }
     
-createMenu(data);
+createMenu();
 
 
 }
