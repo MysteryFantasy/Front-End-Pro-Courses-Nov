@@ -21,8 +21,8 @@ window.onload = function() {
         }
 
         var text = resText(usrText);
-        result.innerHTML = text;
-
+        result.value = text;
+        
     }, 2000)
 
 }
