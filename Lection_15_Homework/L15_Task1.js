@@ -15,7 +15,6 @@ window.onload = function(){
                 title: 'title 3',
                 handler: 'ActionExit'
             }
-
         ]
     }
 
@@ -51,19 +50,19 @@ window.onload = function(){
         }
         document.body.append(container);
     }
-
-createMenu();
-
-actions = {
-    ActionAdd: function() {
-        console.log('ActionAdd...')
-    },
-    ActionSaveAs: function() {
-        console.log('ActionSaveAs...')
-    },
-    ActionExit: function() {
-        console.log('ActionExit...')
+    
+    createMenu();
+    
+    actions = {
+        ActionAdd: function() {
+            console.log('ActionAdd...')
+        },
+        ActionSaveAs: function() {
+            console.log('ActionSaveAs...')
+        },
+        ActionExit: function() {
+            console.log('ActionExit...')
+        }
     }
-}
 
 }
