@@ -32,7 +32,7 @@ window.onload = function(){
             var span = document.createElement('span');
             span.classList.add('change');
                     
-            span.innerHTML = "Title: " + title + " " + "Handler: " + handler;
+            span.innerHTML = "Title: " + title;
 
             span.setAttribute('data-action', handler);
             
