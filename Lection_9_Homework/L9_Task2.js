@@ -9,7 +9,9 @@ function changeText(str) {
     arr[i] = capLetFirst(arr[i]);
     console.log(arr[i], 'arr[i]')
   }
-  return arr;
+  var newText = arr.join('');
+  // console.log(newText,'newText');
+  return newText;
 }
 
 function capLetFirst(str) {
