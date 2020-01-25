@@ -28,11 +28,9 @@ var obj = {
     },    
 
     result: '',
-    property: 'newResult',
-   
 }
 
-console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().copy('newKey').target('newValue').doFunction(deduct, 7, 2));
+console.log(obj.doFunction(sum, 2, 4).copy('newKey').target('newValue').doFunction(mul, 6, 3));
 
 function sum(x, y) {
     res = x + y;
