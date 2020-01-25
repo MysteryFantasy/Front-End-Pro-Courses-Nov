@@ -5,25 +5,25 @@ var obj = {
     },
 
     clear: function() {
-        if(this.property) {
-            this['newResult'] = 0;
-        } else {
-            this.result = 0;
-        }
+        this.result = 0;
         return this;
     },
 
     doFunction: function(callback, x, y) {
-        if(this.property) {
-            this['newResult'] = callback(x,y);
-        } else {
-            this.result = callback(x, y);
-        }
+        this.result = callback(x, y);
         return this;
     },
 
     target: function(property){
-        this.property = property;
+        this.doFunction = function(callback, x, y){
+            this[property] = callback(x,y)
+            return this;
+        },
+        
+        this.clear = function(){
+            this[property] = 0;
+            return this;
+        }
         return this;
     },    
 
@@ -31,7 +31,6 @@ var obj = {
 }
 
 console.log(obj.doFunction(sum, 2, 4).copy('newKey').target('newValue').doFunction(mul, 6, 3));
-
 function sum(x, y) {
     res = x + y;
     return res;
