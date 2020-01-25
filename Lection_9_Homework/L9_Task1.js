@@ -5,12 +5,20 @@ var obj = {
     },
 
     clear: function() {
-        this.result = 0;
+        if(this.property) {
+            this['newResult'] = 0;
+        } else {
+            this.result = 0;
+        }
         return this;
     },
 
     doFunction: function(callback, x, y) {
-        this.result = callback(x, y);
+        if(this.property) {
+            this['newResult'] = callback(x,y);
+        } else {
+            this.result = callback(x, y);
+        }
         return this;
     },
 
@@ -20,14 +28,11 @@ var obj = {
     },    
 
     result: '',
+    property: 'newResult',
    
 }
 
-console.log(obj, 'obj');
-// console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3));
-console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear());
-// console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().doFunction(div, 12, 4).copy('newKey').doFunction(deduct, 7, 2));
-console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().copy('newKey').doFunction(deduct, 7, 2).target('newValue'));
+console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().copy('newKey').target('newValue').doFunction(deduct, 7, 2));
 
 function sum(x, y) {
     res = x + y;
