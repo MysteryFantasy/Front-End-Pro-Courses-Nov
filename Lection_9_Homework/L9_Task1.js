@@ -14,6 +14,11 @@ var obj = {
         return this;
     },
 
+    target: function(property){
+        this.property = property;
+        return this;
+    },    
+
     result: '',
    
 }
@@ -21,7 +26,8 @@ var obj = {
 console.log(obj, 'obj');
 // console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3));
 console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear());
-console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().doFunction(div, 12, 4).copy('newKey').doFunction(deduct, 7, 2));
+// console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().doFunction(div, 12, 4).copy('newKey').doFunction(deduct, 7, 2));
+console.log(obj.doFunction(sum, 2, 4).doFunction(mul, 6, 3).clear().copy('newKey').doFunction(deduct, 7, 2).target('newValue'));
 
 function sum(x, y) {
     res = x + y;
