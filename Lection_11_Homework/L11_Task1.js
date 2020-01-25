@@ -1,17 +1,14 @@
 function SuperMath() {
     
     this.input = function() {
-        newX = parseInt(prompt('Введите новое значение "x"'));
-        X = newX;
-        console.log(newX, 'newX');
+        X = parseInt(prompt('Введите новое значение "x"'));
+        console.log(X, 'X');
         
-        newY = parseInt(prompt('Введите новое значение "y"'));
-        Y = newY;
-        console.log(newY, 'newY');
+        Y = parseInt(prompt('Введите новое значение "y"'));
+        console.log(Y, 'Y');
         
-        newZnak = prompt('Введите новое значение "znak"');
-        znak = newZnak;
-        console.log(newZnak, 'newZnak');
+        znak = prompt('Введите новое значение "znak"');
+        console.log(znak, 'znak');
 
         if ((znak == '+') || (znak == '-') || (znak == '*') || (znak == '/') || (znak == '%')) {
             return this.znak();
@@ -38,18 +35,15 @@ SuperMath.prototype.znak = function() {
     return result;
 }
 
-var p = new SuperMath();
-console.log(p, 'p');
-
-p.check = function(obj) {
+SuperMath.check = function(obj) {
     X = obj.X;
     Y = obj.Y;
     znak = obj.znak;
     var doMath = confirm("Вы точно хотите выполнить действие: " + X + " " + znak + " " + Y + "?");
     if (doMath == true) {
-        return p.znak();
+        return this.znak();
     } else {
-        return p.input();
+        return this.input();
     }
 }
 
@@ -58,5 +52,9 @@ obj = {
     Y: 3,
     znak: "/"
 }
+
+var p = new SuperMath();
+console.log(p, 'p');
+p.check = SuperMath.check;
 
 console.log(p.check(obj));
