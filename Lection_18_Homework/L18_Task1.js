@@ -54,7 +54,7 @@ window.onload = function() {
 
         if(id >= button.length){
            alert('There is no block with such id. The maximum block number is ' + (button.length - 1));
-        } else if(isNaN(counterValue)){
+        } else if(isNaN(counterValue) || isNaN(id)){
             alert('You should input only numbers');
         } else {
             for(let i = 0; i < button.length; i ++) {
