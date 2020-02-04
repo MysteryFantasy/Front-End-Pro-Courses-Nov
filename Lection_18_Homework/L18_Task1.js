@@ -3,6 +3,8 @@ window.onload = function() {
 
     var clearCounters = document.querySelector('.clearCounters');
 
+    var setCounter = document.querySelector('.setCounter');
+
     var storage = {
         value: '',
         setInStorage: function(key, value) {
@@ -41,6 +43,26 @@ window.onload = function() {
             counter = 0;
             
             storage.setInStorage('counter' + i, counter);  
+        }
+    }
+
+    setCounter.onclick = function() {
+        var id = parseInt(prompt('Input block number'));
+        console.log(id,'id');
+        var counterValue = parseInt(prompt('Input counter value'));
+        console.log(counterValue,'counterValue');
+
+        if(id >= button.length){
+           alert('There is no block with such id. The maximum block number is ' + (button.length - 1));
+        } else if(isNaN(counterValue)){
+            alert('You should input only numbers');
+        } else {
+            for(let i = 0; i < button.length; i ++) {
+                
+                block = getParent(button[id], '.block').querySelector('.count').innerHTML = counterValue;   
+                
+                storage.setInStorage('counter' + id, counterValue);  
+            }
         }
     }
 
