@@ -21,10 +21,19 @@ window.onload = function(){
 
     .then(function(){
         console.log(3, 'resolve 2');
+        return Promise.reject();
     },
 
     function(){
         console.log(4, 'reject 2');
+    })
+
+    .then(function(){
+        console.log(5, 'resolve 3');
+    },
+
+    function(){
+        console.log(6, 'reject 3');
     });
 
 }
