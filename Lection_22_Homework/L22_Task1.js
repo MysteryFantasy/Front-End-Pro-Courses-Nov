@@ -34,6 +34,19 @@ window.onload = function(){
 
     function(){
         console.log(6, 'reject 3');
+        if(confirm()){
+            return Promise.reject();
+        } else {
+            return;
+        }
+    })
+
+    .then(function(){
+        console.log(7, 'resolve 4');
+    },
+
+    function(){
+        console.log(8, 'reject 4');
     });
 
 }
