@@ -1,6 +1,7 @@
 window.onload = function() {
     var button = document.querySelectorAll('.btn');
-    // console.log(button, 'button');
+
+    var clearCounters = document.querySelector('.clearCounters');
 
     var storage = {
         value: '',
@@ -30,6 +31,16 @@ window.onload = function() {
                 counter = ++block.querySelector('.count').innerHTML;
             }
             storage.setInStorage('counter' + i, counter);
+        }
+    }
+
+    clearCounters.onclick = function() {
+        for(let i = 0; i < button.length; i ++) {
+            block = getParent(button[i], '.block').querySelector('.count').innerHTML = 0;
+            
+            counter = 0;
+            
+            storage.setInStorage('counter' + i, counter);  
         }
     }
 
