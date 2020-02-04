@@ -17,6 +17,14 @@ window.onload = function(){
     function() {
         console.log(2, 'reject 1');
         return;
+    })
+
+    .then(function(){
+        console.log(3, 'resolve 2');
+    },
+
+    function(){
+        console.log(4, 'reject 2');
     });
 
 }
