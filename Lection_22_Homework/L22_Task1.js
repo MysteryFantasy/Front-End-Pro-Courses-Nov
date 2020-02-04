@@ -47,6 +47,24 @@ window.onload = function(){
 
     function(){
         console.log(8, 'reject 4');
-    });
+        return;
+    })
 
+    .then(function(){
+        console.log(9, 'resolve 5');
+        return Promise.reject();
+    },
+
+    function(){
+        console.log(10, 'reject 5');
+    })
+
+    .then(function(){
+        console.log(11, 'resolve 6');
+    },
+
+    function(){
+        console.log(12, 'reject 6');
+    });
+    
 }
