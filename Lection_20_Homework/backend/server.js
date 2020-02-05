@@ -29,6 +29,22 @@ function getDataFromDataBasse() {
     {name: 'Ivan'},
     {name: 'Yura'}
   ];
+};
+
+app.get('/user', function (req, res) {
+  const last = getLastUser(users);
+  console.log(last, 'last');
+  res.send(last);
+});
+
+function getLastUser(users) {
+  var lastUser = '';
+  for(var i = 0; i < users.length; i++){
+    lastUser = users[users.length - 1];
+    // console.log(lastUser, 'lastUser');
+    return lastUser;
+
+  }
 }
 
 app.listen(3000, function () {

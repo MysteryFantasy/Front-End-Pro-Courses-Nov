@@ -6,7 +6,7 @@ window.onload = function() {
         if (xhttp.readyState == 4) {
             let data = xhttp.responseText;
             let parsedData = JSON.parse(data);
-            console.log(parsedData, 'parsedData1')// {name:'Valera', lastName:"Adsasd", isMaried: true, childrens: [1,2,3]}
+            console.log(parsedData, 'parsedData1');
             render(parsedData);
         }
     }
@@ -23,5 +23,22 @@ window.onload = function() {
     let items = data.map(item => '<div' + ' class="block"' + '>' + item.name + '</div>');
       users.innerHTML  = items.join(' ');
    }
+
+   var request = new XMLHttpRequest();
+
+   request.onreadystatechange = function() {
+       console.log(request.readyState, 'request.readyState');
+       if (request.readyState == 4) {
+           let lastUserName = request.responseText;
+           let parsedLastUserName = JSON.parse(lastUserName);
+           console.log(parsedLastUserName);  
+       }
+   }
+
+  request.open("GET", "http://localhost:3000/user", true);
+
+   this.document.querySelector('#lastBtn').onclick = function() {
+       request.send();
+    }   
 
 }
