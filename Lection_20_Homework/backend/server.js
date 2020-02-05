@@ -29,21 +29,19 @@ function getDataFromDataBasse() {
     {name: 'Ivan'},
     {name: 'Yura'}
   ];
-};
+}
 
 app.get('/user', function (req, res) {
-  const last = getLastUser(users);
-  console.log(last, 'last');
-  res.send(last);
+  const lastUserName = getLastUser(users);
+  console.log(lastUserName, 'lastUserName');
+  res.send(lastUserName);
 });
 
 function getLastUser(users) {
   var lastUser = '';
   for(var i = 0; i < users.length; i++){
     lastUser = users[users.length - 1];
-    // console.log(lastUser, 'lastUser');
     return lastUser;
-
   }
 }
 

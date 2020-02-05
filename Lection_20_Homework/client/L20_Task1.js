@@ -6,39 +6,47 @@ window.onload = function() {
         if (xhttp.readyState == 4) {
             let data = xhttp.responseText;
             let parsedData = JSON.parse(data);
-            console.log(parsedData, 'parsedData1');
+            console.log(parsedData);
             render(parsedData);
         }
     }
 
-   xhttp.open("GET", "http://localhost:3000/users", true);
+    xhttp.open("GET", "http://localhost:3000/users", true);
 
-   this.document.querySelector('#btn').onclick = function() {
+    this.document.querySelector('#btn').onclick = function() {
         xhttp.send();
-   }
+    }
+    
+    function render(data) {
+        const users = document.querySelector('.users');
 
-   function render(data) {
-    const users = document.querySelector('.users');
+        let items = data.map(item => '<div' + ' class="block"' + '>' + item.name + '</div>');
+        users.innerHTML  = items.join(' ');
+    }
 
-    let items = data.map(item => '<div' + ' class="block"' + '>' + item.name + '</div>');
-      users.innerHTML  = items.join(' ');
-   }
+    var request = new XMLHttpRequest();
 
-   var request = new XMLHttpRequest();
-
-   request.onreadystatechange = function() {
+    request.onreadystatechange = function() {
        console.log(request.readyState, 'request.readyState');
        if (request.readyState == 4) {
            let lastUserName = request.responseText;
            let parsedLastUserName = JSON.parse(lastUserName);
            console.log(parsedLastUserName);  
+           showLastUser(parsedLastUserName);
        }
-   }
+    }
 
-  request.open("GET", "http://localhost:3000/user", true);
+    request.open("GET", "http://localhost:3000/user", true);
 
-   this.document.querySelector('#lastBtn').onclick = function() {
+    this.document.querySelector('#lastBtn').onclick = function() {
        request.send();
-    }   
+    }
+
+    function showLastUser(item) {
+        let lastBox = document.querySelector('.last');
+
+        let result = ('<p' + ' class="box"' + '>' + item.name + '</p>');
+        lastBox.innerHTML = result;
+    }
 
 }
