@@ -15,12 +15,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/users', function (req, res) {
-  const users = getDataFromDataBasse(); 
+  const users = getDataFromDataBase();
+  console.log(users, 'users');
 
   res.send(users);
 });
 
-function getDataFromDataBasse() {
+function getDataFromDataBase() {
   return users = [
     {name: 'Valera'},
     {name: 'Ihor'},
@@ -29,11 +30,14 @@ function getDataFromDataBasse() {
     {name: 'Ivan'},
     {name: 'Yura'}
   ];
-}
+};
+
+getDataFromDataBase();
 
 app.get('/user', function (req, res) {
   const lastUserName = getLastUser(users);
   console.log(lastUserName, 'lastUserName');
+
   res.send(lastUserName);
 });
 
