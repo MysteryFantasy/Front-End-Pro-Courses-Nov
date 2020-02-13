@@ -13,7 +13,7 @@ window.onload = function() {
 
     xhttp.open("GET", "http://localhost:3000/users", true);
 
-    this.document.querySelector('#btn').onclick = function() {
+    document.querySelector('#btn').onclick = function() {
         xhttp.send();
     }
     
@@ -38,7 +38,7 @@ window.onload = function() {
 
     request.open("GET", "http://localhost:3000/user", true);
 
-    this.document.querySelector('#lastBtn').onclick = function() {
+    document.querySelector('#lastBtn').onclick = function() {
        request.send();
     }
 
