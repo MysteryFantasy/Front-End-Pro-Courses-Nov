@@ -25,7 +25,8 @@
             <li v-for="(item, $index) in toDoList2" :key="$index">
                 {{item.task}}
             </li>
-        </ol> 
+        </ol>
+        <button @click=transferToList1()>Transfer</button>
 
     </div>
 </body>
