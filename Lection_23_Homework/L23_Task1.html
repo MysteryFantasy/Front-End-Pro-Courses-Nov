@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L23_Task1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="L23_Task1.js"></script>
+</head>
+<body>
+    <div class="list">
+        <p><strong>To Do List 1</strong></p>
+
+        <ol>
+            <li v-for="(item, $index) in toDoList1" :key="$index">
+                {{item.task}}
+            </li>
+        </ol>
+
+        <p><strong>To  Do List 2</strong></p>
+
+        <ol>
+            <li v-for="(item, $index) in toDoList2" :key="$index">
+                {{item.task}}
+            </li>
+        </ol> 
+
+    </div>
+</body>
+</html>
