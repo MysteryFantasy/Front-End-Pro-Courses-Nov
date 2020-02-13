@@ -38,12 +38,9 @@ app.get('/user', function (req, res) {
 });
 
 function getLastUser(users) {
-  var lastUser = '';
-  for(var i = 0; i < users.length; i++){
-    lastUser = users[users.length - 1];
-    return lastUser;
-  }
-}
+  var lastUser = users[users.length - 1];
+  return lastUser;
+};
 
 app.listen(3000, function () {
   console.log('Example app listening on port http://localhost:3000/');

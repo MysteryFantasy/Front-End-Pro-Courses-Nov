@@ -45,7 +45,7 @@ window.onload = function() {
     function showLastUser(item) {
         let lastBox = document.querySelector('.last');
 
-        let result = ('<p' + ' class="box"' + '>' + item.name + '</p>');
+        let result = ('<div' + ' class="box"' + '>' + item.name + '</div>');
         lastBox.innerHTML = result;
     }
 
