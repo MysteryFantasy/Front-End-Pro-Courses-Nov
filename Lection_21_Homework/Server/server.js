@@ -55,14 +55,15 @@ app.post('/goods', function (req, res) {
     let id = JSON.parse(req.body);
     console.log(id,'id');
     let urlToJson = 'goods/' + id + '.json';
-    // console.log(urlToJson, 'urlToJson');
+    console.log(urlToJson, 'urlToJson');
   
     fs.readFile(urlToJson, 'utf8', function(err, goodsList) { 
       console.log('goodsList', goodsList);
       var parsedGoodsList = JSON.parse(goodsList)
       console.log(parsedGoodsList, 'parsedGoodsList');  
       res.send(parsedGoodsList);
-    })
+    });
+    
 });
 
 app.listen(3000, function () {

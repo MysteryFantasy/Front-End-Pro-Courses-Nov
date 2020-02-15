@@ -19,7 +19,7 @@ window.onload = function(){
             if (xhttp.status == 200) {
                 getUserGoogs(parsedUserID);
             } else {
-                console.log('no goods');
+                goods.innerHTML = "Status: " + xhttp.status + " " + xhttp.statusText + "<br>" + "User: " + parsedUserID;
             }
         }
     };
@@ -42,10 +42,17 @@ window.onload = function(){
             if(request.readyState == 4) {
                 let userGoods = JSON.parse(request.responseText);
                 console.log(userGoods,'userGoods');
+                showUserGoods(userGoods);
             }
         }
         request.open("POST", "http://localhost:3000/goods",true, parsedUserID);
         request.send(JSON.stringify(parsedUserID));
     }; 
+
+    function showUserGoods(data) {
+        for(let i = 0; i < data.length; i++) {
+            goods.innerHTML += "<li>"+ data[i].title + ": " + data[i].food + "</li>";
+        }
+    };
 
 }
