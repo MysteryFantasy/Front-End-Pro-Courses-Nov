@@ -33,6 +33,26 @@ Vue.component('Diagrams', {
         }
 
     },
+    mounted() {
+        this.getItemFromLocalStorage();
+    },
+    
+    watch: {
+        diagrammBlock: {
+            handler: function(newValue) {
+                localStorage.setItem('updatedDiagrammBlock', JSON.stringify(newValue));
+            },
+            deep: true
+        }
+    },
+    
+    methods: {
+        getItemFromLocalStorage() {
+            if (localStorage.getItem('updatedDiagrammBlock')) {
+                this.diagrammBlock = JSON.parse(localStorage.getItem('updatedDiagrammBlock'));
+            }
+        },
+    },
 
     template: 
     `
