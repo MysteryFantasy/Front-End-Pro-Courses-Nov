@@ -1,6 +1,8 @@
 window.onload = function() {
-    var userData2 = document.querySelectorAll('.firstName, .lastName, .position');
-    console.log(userData2, 'userData');
+    var userData = document.querySelectorAll('.firstName, .lastName, .position');
+    // console.log(userData, 'userData');
+
+    getValueFromStore(userData);
     
     setInterval(function(){
 
@@ -12,13 +14,28 @@ window.onload = function() {
                 var name = arr[i].name;
                 var value = arr[i].value;
                 userInfo[name] = value;
-                console.log(userInfo, 'userInfo');
             }
             mass.unshift(userInfo);
-            console.log(mass, 'mass');
+            // console.log(mass, 'mass');
+            var json = JSON.stringify(mass);
+            localStorage.setItem('info', json);
         };
-        setValueInStore(userData2)
+        setValueInStore(userData);
 
     }, 5000);
+
+    function getValueFromStore(arr) {
+        var mass = JSON.parse(localStorage.getItem('info'));
+        if(mass) {
+            for(var i = 0; i < mass.length; i++){
+                var item = mass[i];
+                for(var i = 0; i < arr.length; i++) {
+                    var name = arr[i].name;
+                    var value = item[name];
+                    arr[i].value = value;
+                }
+            }
+        }
+    };
 
 }
