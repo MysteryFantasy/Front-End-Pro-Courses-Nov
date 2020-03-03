@@ -9,6 +9,7 @@ Vue.component('diagrammItem', {
         <div :class="['column', className]"
         :style="{display: 'flex','flexFlow': 'column', 'justifyContent': 'spaceAround', 'margin': '5px', 'backgroundColor': foo.color, 'height': foo.value +'px', 'border': '2px solid black', 'width': '100px'}">
             {{foo.name}}
+            <input type="range" min="100" max="300" step="1" v-model="foo.value">
         </div>
         
     `
