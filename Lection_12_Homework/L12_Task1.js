@@ -16,5 +16,20 @@ function SuperArray(n, m, options){
     this.mass = mass;
 };
 
-var arr = new SuperArray(7, 4, {min:10, max:55});
+var arr = new SuperArray(7, 5, {min:10, max:55});
 console.log(arr, 'arr');
+
+SuperArray.prototype.render = function(separator){
+    var separator = separator;
+    // console.log(separator, 'separator');
+
+    for(var i = 0; i < this.mass.length; i++){
+        for(var j = 0; j < this.mass[i].length; j++){
+            document.write(this.mass[i][j] + ' ');
+        }
+        document.write('<p></p>');
+    }
+    document.write(separator);
+};
+
+arr.render("*-*-*-*-*-*-*-*");
