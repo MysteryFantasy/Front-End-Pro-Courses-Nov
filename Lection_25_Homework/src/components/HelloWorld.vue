@@ -1,8 +1,28 @@
 <template>
   <div class="hello">
     <h1><strong>Welcome to my Project!</strong></h1>
+
+    <Modal>
     
-    <Modal />
+    <template v-slot:header>
+      <div>
+        Header
+      </div>
+    </template>
+    
+    <template v-slot:content>
+      <div>
+        Content
+      </div>
+    </template>
+
+    <template v-slot:footer>
+      <div>
+        Footer
+      </div>
+    </template>
+
+    </Modal>
   
   </div>
 
