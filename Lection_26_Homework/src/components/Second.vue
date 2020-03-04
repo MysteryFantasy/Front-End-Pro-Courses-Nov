@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 export default {
   name: 'Second',
   data () {
@@ -18,8 +18,10 @@ export default {
     ...mapGetters(['getName'])
   },
   methods: {
+    ...mapMutations(['setName']),
+
     onClick() {
-      console.log('click2');
+      this.setName('Ирина');
     }
   }
 }

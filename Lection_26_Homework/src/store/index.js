@@ -13,6 +13,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setName(state, value) {
+      state.name = value;
+    }
   },
   actions: {
   }
