@@ -33,3 +33,22 @@ SuperArray.prototype.render = function(separator){
 };
 
 arr.render("*-*-*-*-*-*-*-*");
+
+SuperArray.prototype.clear = function(direction, k) { 
+    if(direction == 'row') {
+        for(var i = 0; i < this.mass.length; i++){
+            for(var j = 0; j < this.mass[i].length; j++){
+                this.mass[k][j] = 0;
+            }
+        } 
+    } else if(direction == 'column') {
+        for(var i = 0; i < this.mass.length; i++){
+            for(var j = 0; j < this.mass[i].length; j++){
+                this.mass[i][k] = 0;
+            }
+        } 
+    }
+};
+
+arr.clear('row', 1);
+arr.clear('column', 3);
