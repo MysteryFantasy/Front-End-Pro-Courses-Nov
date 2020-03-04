@@ -8,6 +8,9 @@ export default new Vuex.Store({
     name: "Костя",
   },
   getters: {
+    getName(state) {
+      return state.name;
+    },
   },
   mutations: {
   },

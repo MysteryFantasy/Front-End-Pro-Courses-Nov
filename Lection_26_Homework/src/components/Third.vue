@@ -1,18 +1,21 @@
 <template>
   <div class="third">
     <button @click="onClick" class="third__button">Коля</button>
-    {{$store.state.name}}
+    {{getName}}
   </div>
 </template>
 
 <script>
-import { mapMutations, mapActions, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 export default {
   name: 'Third',
   data () {
     return {
       value: ''
     }
+  },
+  computed: {
+    ...mapGetters(['getName'])
   },
   methods: {
     onClick() {
