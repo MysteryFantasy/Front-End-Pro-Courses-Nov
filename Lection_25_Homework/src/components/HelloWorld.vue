@@ -2,7 +2,9 @@
   <div class="hello">
     <h1><strong>Welcome to my Project!</strong></h1>
 
-    <Modal>
+    <button type="button" class="button" @click="openModal" :visible="showModalWindow"> Show Modal Window </button>
+    
+    <Modal v-if="showModalWindow" @close="closeModal">
     
     <template v-slot:header>
       <div>
@@ -36,6 +38,19 @@ export default {
   components: {
     Modal: Modal
   },
+  data () {
+    return {
+      showModalWindow: false,
+    }
+  },
+  methods: {
+    openModal() {
+      this.showModalWindow = true;
+    },
+    closeModal() {
+      this.showModalWindow = false;
+    }
+  }
 }
 </script>
 

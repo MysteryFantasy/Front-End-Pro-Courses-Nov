@@ -26,14 +26,16 @@
 
 export default {
   name: 'Modal',
+  props:{
+    visible: Boolean,
+  },
   methods: {
     close() {
-      console.log('click');
+      this.$emit('close', this.visible);
     },
   }
 };
 </script>
-
 
 <style>
   .modal {
