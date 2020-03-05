@@ -37,6 +37,19 @@ function filterGoodsName() {
     if(item.title.toUpperCase().indexOf(goodsName.value.toUpperCase()) != -1 || item.value === ''){
       return true; 
     }
-    });
+  });
   goodsView.render(goodsNameFilter);
+};
+
+goodsCost.onkeyup = function(){
+  filterGoodsCost();
+};
+
+function filterGoodsCost() {
+  let goodsCostFilter = data.filter(function(item, i, arr) {
+    if(goodsCost.value >= item.cost || goodsCost.value === ''){
+      return true;
+    }
+  });
+  goodsView.render(goodsCostFilter);
 };
