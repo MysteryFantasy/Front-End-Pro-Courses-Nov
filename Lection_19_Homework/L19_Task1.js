@@ -7,23 +7,36 @@ let data = [
 ];
 
 const goods = document.querySelector('.goods');
-console.log(goods, 'goods');
+// console.log(goods, 'goods');
 var goodsName = document.querySelector('.goodsName');
-console.log(goodsName, 'goodsName');
+// console.log(goodsName, 'goodsName');
 var goodsCost = document.querySelector('.goodsCost');
-console.log(goodsCost, 'goodsCost');
+// console.log(goodsCost, 'goodsCost');
 var button = document.querySelector('.btn');
-console.log(button, 'button');
+// console.log(button, 'button');
 
 function ViewController() {};
 
 ViewController.prototype.render = mass => {
   let items = mass.map(item => '<div' + ' class="block"' + '>' + item.title + '<p>' +  item.cost + '</p>' + '</div>');
   goods.innerHTML = items.join(' ');
-}
+};
 
 let goodsView = new ViewController();
 
 console.log(goodsView, 'goodsView');
 
 goodsView.render(data);
+
+goodsName.onkeyup = function(){
+  filterGoodsName();
+};
+
+function filterGoodsName() {
+  let goodsNameFilter = data.filter(function(item, i, arr) {
+    if(item.title.toUpperCase().indexOf(goodsName.value.toUpperCase()) != -1 || item.value === ''){
+      return true; 
+    }
+    });
+  goodsView.render(goodsNameFilter);
+};
