@@ -38,6 +38,7 @@ function filterGoodsName() {
       return true; 
     }
   });
+  goodsView.clear();
   goodsView.render(goodsNameFilter);
 };
 
@@ -51,5 +52,21 @@ function filterGoodsCost() {
       return true;
     }
   });
+  goodsView.clear();
   goodsView.render(goodsCostFilter);
+};
+
+ViewController.prototype.clear = data => {
+  goods.innerHTML = ' ';
+};
+
+// goodsView.clear();
+
+button.onclick = function() {
+    
+  goodsView.clear();
+  goodsName.value = '';
+  goodsCost.value = '';
+  goodsView.render(data);
+
 };
