@@ -15,7 +15,7 @@ window.onload = function() {
                 var value = arr[i].value;
                 userInfo[name] = value;
             }
-            mass.unshift(userInfo);
+            mass.push(userInfo);
             // console.log(mass, 'mass');
             var json = JSON.stringify(mass);
             localStorage.setItem('info', json);
