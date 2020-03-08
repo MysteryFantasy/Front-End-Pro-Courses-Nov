@@ -17,7 +17,10 @@ window.onload = function() {
     
     for(let i = 0; i < button.length; i++) {
         button[i].onclick = function() {
-            nextPage(i);
+            var checkForm = checkData(i);
+            if(checkForm === true) {
+                nextPage(i);
+            }
         }
     };
 
@@ -29,5 +32,23 @@ window.onload = function() {
             box[i].classList.remove('center');
             box[0].classList.add('center'); 
         }
+    };
+
+    function checkData(i){
+        // console.log(i, 'i');
+        if(firstName[i].value.length < 5){
+            console.log('Your name is too short. It shoold be not less than 5 symbols');
+            return false;
+        } else if (lastName[i].value.length < 2) {
+            console.log('Your last name is too short');
+            return false;
+        } else if(age[i].value < 18){
+            console.log("Your age is less than 18");
+            return false;
+        } else if(isNaN(age[i].value)){
+            console.log("You should input only numbers");
+            return false;
+        }
+        return true;
     };
 }
