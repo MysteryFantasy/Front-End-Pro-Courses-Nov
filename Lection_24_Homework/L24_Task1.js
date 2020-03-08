@@ -16,9 +16,6 @@ Vue.component('diagrammItem', {
 });
 
 Vue.component('Diagrams', {
-    props: {
-        newValue: '',
-    },
     data() {
         return {
             diagrammBlock: [
@@ -39,8 +36,8 @@ Vue.component('Diagrams', {
     
     watch: {
         diagrammBlock: {
-            handler: function(newValue) {
-                localStorage.setItem('updatedDiagrammBlock', JSON.stringify(newValue));
+            handler: function(value) {
+                localStorage.setItem('updatedDiagrammBlock', JSON.stringify(value));
             },
             deep: true
         }
