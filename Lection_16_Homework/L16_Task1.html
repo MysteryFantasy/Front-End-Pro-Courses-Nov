@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lection 16</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+        .boxik {
+            background-color:rgba(31, 171, 236, 0.336);
+            border: 2px dashed rgb(18, 8, 153);
+            width: 350px;
+            height: 350px;
+            display: inline-block;
+            position: fixed;
+            transition:all 2s;
+        }
+        .boxik:nth-child(even){
+            left: 100%;
+        }
+        .boxik:nth-child(odd){
+            left: -400px;
+
+        }
+        .center {
+            left: 50% !important; 
+            transform: translateX(-50%);
+        }
+        div {
+            font-size: 20px;
+            color: rgb(98, 19, 117);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="boxik center">Page 1
+        <p>
+            <label for="firstname">First Name:</label>	
+            <input placeholder="Enter your name" name="User's name" type="text" class="firstName">
+        </p>
+
+        <p>
+            <label for="lastname">Last Name:</label>
+            <input placeholder="Enter your last name" name="User's last name" type="text" class="lastName">
+        </p>
+
+        <p>
+            <label for="age">Age:</label>
+            <input placeholder="Enter your age" name="User's age" type="text" class="age">
+        </p>
+
+        <p><button class="btn">Next!</button><p>
+    
+    </div>
+
+    <div class="boxik">Page 2
+        <p>
+            <label for="firstname">First Name:</label>	
+            <input placeholder="Enter your name" name="User's name" type="text" class="firstName">
+        </p>
+
+        <p>
+            <label for="lastname">Last Name:</label>
+            <input placeholder="Enter your last name" name="User's last name" type="text" class="lastName">
+        </p>
+
+        <p>
+            <label for="age">Age:</label>
+            <input placeholder="Enter your age" name="User's age" type="text" class="age">
+        </p>
+
+        <p><button class="btn">Next!</button><p>
+
+    </div>
+        
+    <div class="boxik">Page 3
+        <p>
+            <label for="firstname">First Name:</label>	
+            <input placeholder="Enter your name" name="User's name" type="text" class="firstName">
+        </p>
+
+        <p>
+            <label for="lastname">Last Name:</label>
+            <input placeholder="Enter your last name" name="User's last name" type="text" class="lastName">
+        </p>
+
+        <p>
+            <label for="age">Age:</label>
+            <input placeholder="Enter your age" name="User's age" type="text" class="age">
+        </p>
+
+        <p><button class="btn">Next!</button><p>
+
+    </div>
+    
+    <div class="boxik">Page 4
+        <p>
+            <label for="firstname">First Name:</label>	
+            <input placeholder="Enter your name" name="User's name" type="text" class="firstName">
+        </p>
+
+        <p>
+            <label for="lastname">Last Name:</label>
+            <input placeholder="Enter your last name" name="User's last name" type="text" class="lastName">
+        </p>
+
+        <p>
+            <label for="age">Age:</label>
+            <input placeholder="Enter your age" name="User's age" type="text" class="age">
+        </p>
+
+        <p><button class="btn">Next!</button><p>  
+    </div>
+
+    <div class="boxik">Page 5
+        <p>
+            <label for="firstname">First Name:</label>	
+            <input placeholder="Enter your name" name="User's name" type="text" class="firstName">
+        </p>
+
+        <p>
+            <label for="lastname">Last Name:</label>
+            <input placeholder="Enter your last name" name="User's last name" type="text" class="lastName">
+        </p>
+
+        <p>
+            <label for="age">Age:</label>
+            <input placeholder="Enter your age" name="User's age" type="text" class="age">
+        </p>
+
+        <p><button class="btn">Next!</button><p>
+    </div>
+
+    <script src="L16_Task1.js"></script>
+
+</body>
+</html>
