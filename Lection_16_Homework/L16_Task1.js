@@ -15,20 +15,19 @@ window.onload = function() {
     var age = document.querySelectorAll('.age');
     // console.log(age, 'age');
     
-    var i = 0;
+    for(let i = 0; i < button.length; i++) {
+        button[i].onclick = function() {
+            nextPage(i);
+        }
+    };
 
-    for(; i < box.length; i++){
-        box[i].onclick = (function(i){
-            return function(){
-                var counter;
-                if(box[i + 1]){
-                    counter = i + 1;    
-                } else {
-                    counter = 0;
-                }
-                this.classList.remove('center');
-                box[counter].classList.add('center');
-            }
-        })(i);
+    function nextPage(i) {
+        if(box[i + 1]) {
+            box[i].classList.remove('center');
+            box[i + 1].classList.add('center');
+        } else {
+            box[i].classList.remove('center');
+            box[0].classList.add('center'); 
+        }
     };
 }
