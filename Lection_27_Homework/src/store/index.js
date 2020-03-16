@@ -5,10 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    name: "Отфильтровать (по цене)",
   },
   getters: {
+    getName(state){
+      return state.name;
+    },
   },
   mutations: {
+    setName(state, value){
+      state.name = value;
+    }
   },
   actions: {
   },

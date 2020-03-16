@@ -5,6 +5,7 @@
     </header>
     <div>
       <slot name="content">
+      <p><button @click="filter">{{getName}}</button></p>
         <div class="products" v-for="item in productsList">
           <span>{{item.title}} - {{item.cost}}₴</span>
         </div>
@@ -16,6 +17,7 @@
 <script>
 
 import sendMainAjax from '../database/ProductsBase';
+import {mapMutations, mapGetters} from 'vuex';
 
 export default {
   name: 'Home',
@@ -41,6 +43,32 @@ export default {
       (reject) => {
         console.log('not created');
     });
+        
+  },
+  computed: {
+    ...mapGetters(['getName'])
+  },
+  methods: {
+    ...mapMutations(['setName']),
+    orderedToMaxCost: function() {
+      this.setName('Цена по убыванию');
+      return this.productsList.sort(function(a,b) {
+        return (a.cost - b.cost);
+      })
+    },
+    orderedToMinCost: function() {
+      this.setName('Цена по возрастанию');
+      return this.productsList.sort(function(a,b) {
+        return b.cost - a.cost;
+      })
+    },
+    filter: function() {
+      if (this.getName == 'Цена по возрастанию'){
+        this.orderedToMaxCost();
+      } else {
+        this.orderedToMinCost();
+      }
+    },
   }
     
 }
