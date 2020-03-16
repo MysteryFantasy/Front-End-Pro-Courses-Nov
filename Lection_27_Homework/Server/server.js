@@ -66,6 +66,12 @@ app.post('/newUser', function (req, res) {
 });
 
 function createNewUserID(newParsedData, parsedNewUser) {
+    for(let i = 0; i < newParsedData.length; i++){
+        if (newParsedData[i].login == parsedNewUser.login) {
+            console.log('find');
+            return false;
+        }
+    }
     parsedNewUser.id = JSON.stringify(newParsedData.length + 1);
     console.log(parsedNewUser.id, 'newID');
 
@@ -86,6 +92,8 @@ function readNewUserFile(parsedNewUser, res){
             fs.writeFile('users.json',result, function(err){
             });
             return res.status(200).send(JSON.stringify(resNewUser));
+        } else {
+            return res.status(403).send(JSON.stringify('This user already exists'));
         }
     });
 };

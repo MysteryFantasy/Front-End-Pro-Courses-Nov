@@ -58,7 +58,8 @@ export default {
           this.showModalWindow = false;
         },
         (reject) => {
-          console.log('not registrated');
+          alert('This user already exists');
+          // console.log('not registrated');
         });
     },
     signUp(){
