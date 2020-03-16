@@ -1,0 +1,8 @@
+[
+    { "title": "Americano", "cost": "30"},
+    { "title": "Flat White", "cost": "55" },
+    { "title": "Cappuccino", "cost": "40" }, 
+    { "title": "Latte", "cost": "45" },
+    { "title": "Frappuccino", "cost": "70" },
+    { "title": "Espresso", "cost": "60" }
+]

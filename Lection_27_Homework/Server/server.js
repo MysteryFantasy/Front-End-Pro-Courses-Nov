@@ -90,6 +90,15 @@ function readNewUserFile(parsedNewUser, res){
     });
 };
 
+app.post('/products', function (req, res) {
+    fs.readFile('products/product.json', 'utf8', function(err, productList) { 
+        var parsedProductList = JSON.parse(productList);
+        console.log(parsedProductList, 'parsedProductList');  
+        return res.send(JSON.stringify(parsedProductList));
+    });
+
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port http://localhost:3000/');
 });
